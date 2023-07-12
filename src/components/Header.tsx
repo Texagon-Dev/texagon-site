@@ -1,9 +1,10 @@
-import React from 'react'
+import React,{useState} from 'react'
 import logo from '@/assets/monogram.svg'
 import logoTypo from '@/assets/texagon.svg'
 import Image from 'next/image'
+import {AiOutlineMenu} from 'react-icons/ai'
 
-function Header() {
+function Header(props) {
     const menuItems = [
         {
             name: 'Team',
@@ -14,15 +15,22 @@ function Header() {
             link: '/work'
         }
     ]
+
+
+    function OpenMenu()
+    {
+        props.setSideMenu(!props.SideMenu)
+    }
+
     return (
-        <div className='md:flex hidden flex-row items-center justify-between w-full py-6'>
+        <div className='flex flex-row items-center justify-between w-full py-6 '>
             <a href='/'>
                 <div className="flex flex-row items-center space-x-2">
                     <Image src={logo} alt='logo' className='w-6' />
-                    <Image src={logoTypo} className='w-40' alt='logoTypo' />
+                    <Image src={logoTypo} className='sm:w-40 w-32' alt='logoTypo' />
                 </div>
             </a>
-            <div className='flex flex-row items-center space-x-6'>
+            <div className='md:flex hidden flex-row items-center space-x-6'>
                 {menuItems.map((item, index) => (
                     <a
                         key={index}
@@ -36,6 +44,7 @@ function Header() {
                     Contact Us
                 </button>
             </div>
+            <AiOutlineMenu className='md:hidden block' color='white' size='1.5rem' onClick={OpenMenu}/>
         </div>
     )
 }

@@ -12,7 +12,7 @@ function TeamPage() {
         {
             id: 1,
             avatar: 'https://i.imgur.com/yHGZSC7.png',
-            name: 'Abdurehman Saleemi',
+            name: 'Muhammad Talha',
             // position: 'frontend developer'
         },
         {
@@ -46,7 +46,7 @@ function TeamPage() {
 
     return (
         <>
-            <div className='md:flex hidden flex-col w-full px-12 py-6'>
+            <div className='flex flex-col w-full px-12 py-6'>
                 <h1 className='text-6xl font-bold text-center text-white'>Meet our team</h1>
                 <div className='flex flex-col md:flex-row mt-24 flex-wrap items-start justify-start flex-grow'>
                     {teamMembers.map((member: TeamMembers) => (
@@ -59,17 +59,6 @@ function TeamPage() {
                         </div>
                     ))}
                 </div>
-            </div>
-            <div className='flex md:hidden flex-col items-center justify-center w-full h-screen bg-black/90'>
-                <h1 className={`text-md text-center uppercase tracking-wider font-bold text-white`}>
-                    Mobile Version Under Development
-                </h1>
-                <a href='https://www.fiverr.com/saleemi2082'
-                    target='_blank'
-                    className={`px-4 py-2 mt-4 text-lg font-medium text-black bg-white/90 rounded-lg hover:bg-white transition-all ease-linear`}
-                >
-                    Contact Us
-                </a>
             </div>
         </>
     )
