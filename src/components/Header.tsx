@@ -4,7 +4,7 @@ import logoTypo from '@/assets/texagon.svg'
 import Image from 'next/image'
 import {AiOutlineMenu} from 'react-icons/ai'
 
-function Header(props) {
+function Header(props : any) {
     const menuItems = [
         {
             name: 'Team',
