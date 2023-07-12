@@ -1,5 +1,4 @@
-import React, { useEffect, useRef,useState } from 'react';
-import {AiOutlineArrowDown} from 'react-icons/ai'
+import React, { useEffect, useRef } from 'react';
 
 function Features() {
     const [features, setFeatures] = React.useState([
@@ -109,8 +108,6 @@ function Features() {
         }
     ]);
 
-    const [FeatureContent,setFeatureContent]=useState(-1)
-
     const featureRefs = useRef<(HTMLElement | null)[]>([]);
     const lastScrollY = useRef(0);
     const direction = useRef<'down' | 'up'>('down');
@@ -181,9 +178,9 @@ function Features() {
 
 
     return (
-        <div className='flex flex-row w-full h-full py-10 relative'>
+        <div className='flex flex-row w-full h-full mt-2 relative'>
             {/* Your component JSX... */}
-            <div className='md:flex hidden sticky left-0 top-32 h-full flex-col items-start w-3/5 space-y-8 bg-black'>
+            <div className='flex sticky left-0 top-32 h-full flex-col items-start w-3/5 space-y-8 bg-black'>
                 {features.map((feature, index) => (
                     <h2
                         onClick={() => {
@@ -194,7 +191,7 @@ function Features() {
                     </h2>
                 ))}
             </div>
-            <div className='md:flex hidden flex-col items-start w-full'>
+            <div className='flex flex-col items-start w-full'>
                 {features.map((feature, index) => (
                     <div
                         ref={(el) => { featureRefs.current[index] = el; }}
@@ -209,35 +206,6 @@ function Features() {
                         ))}
                     </div>
                 ))}
-            </div>
-            <div className='md:hidden flex flex-col w-full space-y-5 p-5'>
-                {
-                    features.map((obj,index)=>
-                        <>
-                            <button className='w-full flex justify-between text-white/50 hover:text-white/75 bg-black/50 border-[1px] py-7 px-5 rounded-lg' onClick={()=>{if(FeatureContent==index){setFeatureContent(-1)}else{setFeatureContent(index)}}}>
-                                <text className='text-3xl  font-bold'>{obj.name}</text>
-                                <AiOutlineArrowDown size='1.5rem' color='gray'/>
-                            </button> 
-                            
-                            {
-                                FeatureContent!=-1 && FeatureContent==index?
-                                    <div className='p-3 space-y-5 rounded-lg border-[1px]'>
-                                        {
-                                            obj.content.map((item)=>
-                                                <div className='flex flex-col items-start w-full space-y-1'>
-                                                    <h3 className='text-2xl text-white font-bold'>{item.title}</h3>
-                                                    <p className='text-white/75 text-xl'>{item.description}</p>
-                                                </div>
-                                            )
-                                        }
-                                    </div>
-                                :
-                                <></>
-                            }
-                        </>
-                    )
-                }
-
             </div>
         </div>
     );
