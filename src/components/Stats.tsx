@@ -21,9 +21,9 @@ function Stats() {
         }
     ]
     return (
-        <div className='flex flex-col items-center space-y-12 w-full my-16'>
+        <div className='flex flex-col items-center space-y-12 w-full mt-16'>
             <h2 className='text-4xl font-bold text-white/80'>Our Stats</h2>
-            <div className='flex md:flex-row flex-col items-center justify-evenly w-full md:space-y-0 space-y-10'>
+            <div className='flex flex-row items-center justify-evenly w-full'>
                 {stats.map((stat, index) => (
                     <>
                     <div key={index} className='flex flex-col items-center justify-center space-y-2'>
@@ -31,7 +31,7 @@ function Stats() {
                         <p className='text-xl text-white/60'>{stat.name}</p>
                     </div>
                     {index !== stats.length - 1 && (
-                        <div className='md:w-px w-1/2 md:h-24 h-px bg-white/20'></div>
+                        <div className='w-px h-24 bg-white/20'></div>
                     )}
                     </>
                 ))}
