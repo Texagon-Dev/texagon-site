@@ -2,7 +2,7 @@ import React from 'react'
 import Header from '@/components/Header'
 import WorkPage from '@/components/Work'
 
-export const runtime = 'edge';
+export const runtime = 'experimental-edge';
 
 function Work() {
     return (

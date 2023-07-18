@@ -2,7 +2,7 @@ import React from 'react'
 import TeamPage from '../components/Team'
 import Header from '@/components/Header'
 
-export const runtime = 'edge';
+export const runtime = 'experimental-edge';
 
 function Team() {
     return (

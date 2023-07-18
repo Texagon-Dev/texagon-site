@@ -9,7 +9,7 @@ import Intouch from '@/components/Intouch'
 const inter = Inter({ subsets: ['latin'] })
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'] })
 
-export const runtime = 'edge';
+export const runtime = 'experimental-edge';
 
 export default function Home() {
   return (
