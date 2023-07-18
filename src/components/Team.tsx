@@ -10,27 +10,21 @@ interface TeamMembers {
 function TeamPage() {
     const teamMembers: TeamMembers[] = [
         {
-            id: 6,
+            id: 1,
             avatar: 'https://i.imgur.com/X0R3rPU.png',
             name: 'Abdurehman Saleemi',
             category: ['Founder']
         },
         {
-            id: 1,
+            id: 2,
             avatar: 'https://i.imgur.com/AE6kwIL.png',
             name: 'Muhammad Talha',
             category: ['Co-Founder']
         },
         {
-            id: 2,
+            id: 3,
             avatar: 'https://i.imgur.com/2llxrHc.png',
             name: 'Muhammad Ahmed',
-            category: ['Co-Founder']
-        },
-        {
-            id: 3,
-            avatar: 'https://i.imgur.com/YNT9lmz.png',
-            name: 'Abdullah Naeem',
             category: ['Co-Founder']
         },
         {
@@ -45,6 +39,12 @@ function TeamPage() {
             name: 'Abuzar Saeed',
             category: ['Co-Founder']
         },
+        // {
+        //     id: 6,
+        //     avatar: 'https://i.imgur.com/YNT9lmz.png',
+        //     name: 'Abdullah Naeem',
+        //     category: ['Co-Founder']
+        // },
     ]
 
     return (
@@ -52,7 +52,7 @@ function TeamPage() {
             <div className='flex flex-col md:flex-row w-full px-12 py-12 md:space-x-12 font-secondary'>
                 <div className='flex flex-col space-y-4 w-full md:w-2/6'>
                     <h1 className='text-3xl mt-8 text-white'>Meet our team</h1>
-                    <p className='text-white/70 text-lg'>We are a team of 6 people who are passionate about building products that people love.</p>
+                    <p className='text-white/70 text-lg'>We are a team of {teamMembers.length} people who are passionate about building products that people love.</p>
                 </div>
                 <div className='flex flex-col space-y-24 mt-8 w-full'>
                     {
