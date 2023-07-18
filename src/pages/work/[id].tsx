@@ -4,6 +4,8 @@ import { useRouter } from 'next/router'
 import { MoveLeft } from 'lucide-react'
 import Link from 'next/link'
 
+export const runtime = 'edge';
+
 export const getStaticPaths = async () => {
   const paths = work.map((project) => ({
     params: { id: project.id }
