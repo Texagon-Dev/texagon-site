@@ -1,6 +1,9 @@
 import React from 'react'
 import Header from '@/components/Header'
 import WorkPage from '@/components/Work'
+
+export const runtime = 'experimental-edge';
+
 function Work() {
     return (
         <div className='flex flex-col w-full min-h-screen bg-black'>
